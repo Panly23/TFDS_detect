@@ -26,7 +26,7 @@ conda create -n tfds python=3.9
 conda activate tfds
 pip install torch==1.13.1 torchvision
 pip install pyqt5 labelme scikit-learn opencv-python
-
+```
 ## **Workflow**
 
 ### **Data Preparation:**
@@ -38,3 +38,4 @@ pip install pyqt5 labelme scikit-learn opencv-python
 ### **Object detection (YOLOv5)**
 ```bash
 python train.py --data data.yaml --cfg yolov5s.yaml --weights yolov5s.pt --epochs 100
+```
