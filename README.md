@@ -66,3 +66,9 @@ python src/GUI_software.py
 | Retaining Key | 0.999        | 1.000      | 0.995  |
 | Locking Plate | 0.999        | 1.000      | 0.995  |
 
+## Notes
+- Adjust YOLOv5 training parameters (e.g., batch_size) based on hardware
+
+- Custom dataset expansion requires data.yaml format configuration
+
+- GUI interaction logic details in src/GUI_software.py
