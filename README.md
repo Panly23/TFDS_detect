@@ -10,7 +10,11 @@ This project aims to develop a computer vision-based automated fault detection s
   - Retaining key bolt loosening (YOLOv5 detection: 2.9% missed detection)
   - Locking plate displacement (SVM classifier: 1.67% false detection)
 - **Batch Processing & Visualization**: Supports batch image import with tabular results and per-image inspection
-
+## System functions
+- **Image preprocessing**：Enhance the original image using Laplace, histogram equalization, Log transform, and Retinex algorithm to improve uneven lighting.
+- **Target area segmentation**: Using YOLOv5 network to locate and segment key components in TFDS images, reducing background interference.
+- **Fault diagnosis**: SVM or deep learning methods were used for binary classification of different components to determine whether there is a "fault" or "no fault", and high accuracy (mAP ≈ 0.995) was obtained through experimental verification.
+- **System interface**: Design a graphical interface using PyQt5 to achieve functions such as batch processing of images, viewing each image individually, and displaying fault detection results.
 ## Tech Stack
 - **Algorithms**: YOLOv5 (object detection), SVM (fault classification)
 - **Language**: Python 3.9
@@ -18,16 +22,15 @@ This project aims to develop a computer vision-based automated fault detection s
 - **Annotation Tool**: Labelme
 - **Preprocessing**: Retinex algorithm (illumination compensation)
 
-## Installation & Usage
+## Installation 
 ```bash
 conda create -n tfds python=3.9
 conda activate tfds
 pip install torch==1.13.1 torchvision
 pip install pyqt5 labelme scikit-learn opencv-python
 ```
-## **Workflow**
-
-### **Data Preparation:**
+## Usage
+###1. **Clone repositoryn:**
 - Store TFDS images in `data/raw_images`
 - Annotate components using Labelme, save annotations to `data/annotations`
 
