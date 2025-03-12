@@ -22,18 +22,19 @@ This project aims to develop a computer vision-based automated fault detection s
 - **Annotation Tool**: Labelme
 - **Preprocessing**: Retinex algorithm (illumination compensation)
 
-## Installation 
-```bash
-conda create -n tfds python=3.9
-conda activate tfds
-pip install torch==1.13.1 torchvision
-pip install pyqt5 labelme scikit-learn opencv-python
-```
-## Usage
+## Installation & Usage
 **1. Clone repository:**
-- Store TFDS images in `data/raw_images`
-- Annotate components using Labelme, save annotations to `data/annotations`
-
+```bash
+git clone  https://github.com/YourUsername/TFDS_detect.git
+cd TFDS_detect
+```
+**2. Create a virtual environment and install dependencies:**
+```bash
+conda create -n tfds_env python=3.9
+conda activate tfds_env
+pip install -r requirements.txt
+```
+For the YOLOv5 module, please refer to yolov5-master/requestations.txt.
 ### **Model Training:**
 ```bash
 # Object detection (YOLOv5)
