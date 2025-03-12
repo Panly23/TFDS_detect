@@ -1,11 +1,40 @@
 # TFDS_detect
-## Project introduction
-The purpose of this project is to develop a set of automatic fault identification system for railway freight cars based on computer vision to solve the problems of low efficiency and high omission rate of traditional manual detection. The system locates the key parts through the yolov5 target detection network, realizes fault classification by combining SVM and deep learning algorithm, and is equipped with pyqt5 interactive interface, which can process TFDs images in real time and feed back fault information. The experiment shows that the false detection rate of the system is less than 2%, and the missing detection rate is less than 3%
+# Railway Freight Car Fault Detection System Based on Deep Learning
 
-## Functional characteristics
--* * inspection of key parts * *: positioning core components such as rolling bearings, gear keys and locking plates（ mAP@0.5 ≥ 0.99).
--* * multi type fault identification * *:
--Bearing oil leakage (SVM classification, false detection rate 1%, missing detection rate 0%)
--The retaining key bolt is loose (yolov5 detection, missed detection rate is 2.9%)
--Locking plate offset (SVM classification, false detection rate 1.67%)
--* * batch processing and visualization interface * *: supports batch import of image sets, and provides the function of fault result table and view one by one.
+## Project Overview
+This project aims to develop a computer vision-based automated fault detection system for railway freight cars, addressing inefficiencies and high missed detection rates in traditional manual inspections. The system utilizes the YOLOv5 object detection network to locate critical components, combines SVM and deep learning algorithms for fault classification, and features a PyQt5 GUI for real-time TFDS image processing and fault feedback. Experimental results show the system achieves <2% false detection rate and <3% missed detection rate, meeting railway industry requirements.
+
+## Key Features
+- **Critical Component Detection**: Locates core components (bearings, retaining keys, locking plates) with mAP@0.5 ≥ 0.99
+- **Multi-type Fault Recognition**:
+  - Bearing oil leakage (SVM classifier: 1% false detection, 0% missed detection)
+  - Retaining key bolt loosening (YOLOv5 detection: 2.9% missed detection)
+  - Locking plate displacement (SVM classifier: 1.67% false detection)
+- **Batch Processing & Visualization**: Supports batch image import with tabular results and per-image inspection
+
+## Tech Stack
+- **Algorithms**: YOLOv5 (object detection), SVM (fault classification)
+- **Language**: Python 3.9
+- **Libraries**: PyTorch 1.13.1, OpenCV, Scikit-learn, PyQt5
+- **Annotation Tool**: Labelme
+- **Preprocessing**: Retinex algorithm (illumination compensation)
+
+## Installation & Usage
+### Environment Setup
+```bash
+conda create -n tfds python=3.9
+conda activate tfds
+pip install torch==1.13.1 torchvision
+pip install pyqt5 labelme scikit-learn opencv-python
+
+## **Workflow**
+
+### **Data Preparation:**
+- Store TFDS images in `data/raw_images`
+- Annotate components using Labelme, save annotations to `data/annotations`
+
+### **Model Training:**
+
+### **Object detection (YOLOv5)**
+```bash
+python train.py --data data.yaml --cfg yolov5s.yaml --weights yolov5s.pt --epochs 100
