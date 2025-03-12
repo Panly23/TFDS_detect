@@ -35,7 +35,12 @@ conda activate tfds_env
 pip install -r requirements.txt
 ```
 For the YOLOv5 module, please refer to yolov5-master/requestations.txt.
-### **Model Training:**
+**3. data preparation:**
+- **Image data**: Store the raw images collected by the TFDS system in `data/raw_images` (to be created by oneself)
+- **Labeling data**: Use Labelme to label key components, and store the labeling results in `data/annotations`
+**4. model training:**
+- **Object Detection (YOLOv5)**: 
+Run in the `yolov5 master` directory:
 ```bash
 # Object detection (YOLOv5)
 python train.py --data data.yaml --cfg yolov5s.yaml --weights yolov5s.pt --epochs 100
