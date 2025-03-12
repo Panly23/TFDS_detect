@@ -58,17 +58,17 @@ The system interface supports batch processing of images, viewing each image ind
 
 ## Project Structure
 ```bash
-├── GUI_design/                # GUI 设计相关代码及配置
-├── HOG_SVM-master/            # HOG+SVM 故障检测模块（含独立 README）
-├── break_image/               # 原始故障图片
-├── break_image_retinex/       # 经 Retinex 处理后的图片
-├── gitbook/                   # 项目文档（GitBook 格式）
-├── image_evaluate.py          # 图像评估脚本
-├── software_GUI/              # 主系统 GUI 软件及相关代码
-├── test/                      # 测试图片
-├── test-1/                    # 其他测试图片及子目录
-├── README.md                  # 本文档
-└── yolov5-master/             # YOLOv5 模块（含多种配置及说明文件）
+├── GUI_design/                # GUI design related code and configuration
+├── HOG_SVM-master/            # HOG+SVM obstacle detection module
+├── break_image/               # Original fault image
+├── break_image_retinex/       # Processed by Retinex
+├── gitbook/                   # Project documentation (GitBook format)
+├── image_evaluate.py          # Image evaluation script
+├── software_GUI/              # Main system GUI software and related code
+├── test/                      # Test image
+├── test-1/                    # Other test images and subdirectories
+├── README.md                  # This document
+└── yolov5-master/             # YOLOv5 module (including multiple configurations and documentation)
 ```
 ## Performance
 | Component      | Precision (P) | Recall (R) | mAP@0.5 |
@@ -77,9 +77,3 @@ The system interface supports batch processing of images, viewing each image ind
 | Retaining Key | 0.999        | 1.000      | 0.995  |
 | Locking Plate | 0.999        | 1.000      | 0.995  |
 
-## Notes
-- Adjust YOLOv5 training parameters (e.g., batch_size) based on hardware
-
-- Custom dataset expansion requires `data.yaml` format configuration
-
-- GUI interaction logic details in `src/GUI_software.py`
