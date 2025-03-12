@@ -1,5 +1,4 @@
-# TFDS_detect
-# Railway Freight Car Fault Detection System Based on Deep Learning
+# TFDS_detect（Railway Freight Car Fault Detection System Based on Deep Learning）
 
 ## Project Overview
 This project aims to develop a computer vision-based automated fault detection system for railway freight cars, addressing inefficiencies and high missed detection rates in traditional manual inspections. The system utilizes the YOLOv5 object detection network to locate critical components, combines SVM and deep learning algorithms for fault classification, and features a PyQt5 GUI for real-time TFDS image processing and fault feedback. Experimental results show the system achieves <2% false detection rate and <3% missed detection rate, meeting railway industry requirements.
@@ -45,8 +44,8 @@ python train_svm.py --dataset data/processed --class bearing
 ```bash
 python src/GUI_software.py
 ```
-Project Structure
-
+## Project Structure
+```bash
 ├── data/                 # Datasets
 │   ├── raw_images/       # Raw TFDS images
 │   ├── processed/        # Preprocessed images
@@ -59,8 +58,8 @@ Project Structure
 │   ├── detection.py      # Object detection
 │   └── GUI_software.py   # System GUI
 └── docs/                 # Documentation
-
-Performance
+```
+## Performance
 Component	Precision (P)	Recall (R)	mAP@0.5
 Bearing	0.997	1.000	0.995
 Retaining Key	0.999	1.000	0.995
