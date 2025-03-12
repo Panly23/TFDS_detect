@@ -44,30 +44,31 @@ For the YOLOv5 module, please refer to yolov5-master/requestations.txt.<br>
 - **Object Detection (YOLOv5)**:<br> 
 Run in the `yolov5 master` directory:
 ```bash
-# Object detection (YOLOv5)
 python train.py --data data.yaml --cfg yolov5s.yaml --weights yolov5s.pt --epochs 100
+```
+- **Fault classification (SVM/YOLOv5)**:<br> 
+Select the corresponding classifier based on the actual components and run the training script (such as `HOG_SVM` master or custom SVM training script) under the corresponding module
 
-# Fault classification (SVM)
-python train_svm.py --dataset data/processed --class bearing
-```
-### Launch GUI
+## Launch GUI
+Run in the `software_GUI` directory:
 ```bash
-python src/GUI_software.py
+python GUI_software.py
 ```
+The system interface supports batch processing of images, viewing each image individually, and displaying fault detection results.
+
 ## Project Structure
 ```bash
-├── data/                 # Datasets
-│   ├── raw_images/       # Raw TFDS images
-│   ├── processed/        # Preprocessed images
-│   └── annotations/      # Labelme annotations
-├── models/               # Pretrained models
-│   ├── yolov5s.pt
-│   └── svm_classifier.pkl
-├── src/                  # Source code
-│   ├── preprocessing.py  # Image enhancement
-│   ├── detection.py      # Object detection
-│   └── GUI_software.py   # System GUI
-└── docs/                 # Documentation
+├── GUI_design/                # GUI 设计相关代码及配置
+├── HOG_SVM-master/            # HOG+SVM 故障检测模块（含独立 README）
+├── break_image/               # 原始故障图片
+├── break_image_retinex/       # 经 Retinex 处理后的图片
+├── gitbook/                   # 项目文档（GitBook 格式）
+├── image_evaluate.py          # 图像评估脚本
+├── software_GUI/              # 主系统 GUI 软件及相关代码
+├── test/                      # 测试图片
+├── test-1/                    # 其他测试图片及子目录
+├── README.md                  # 本文档
+└── yolov5-master/             # YOLOv5 模块（含多种配置及说明文件）
 ```
 ## Performance
 | Component      | Precision (P) | Recall (R) | mAP@0.5 |
