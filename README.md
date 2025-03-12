@@ -19,7 +19,6 @@ This project aims to develop a computer vision-based automated fault detection s
 - **Preprocessing**: Retinex algorithm (illumination compensation)
 
 ## Installation & Usage
-### Environment Setup
 ```bash
 conda create -n tfds python=3.9
 conda activate tfds
@@ -69,6 +68,6 @@ python src/GUI_software.py
 ## Notes
 - Adjust YOLOv5 training parameters (e.g., batch_size) based on hardware
 
-- Custom dataset expansion requires data.yaml format configuration
+- Custom dataset expansion requires `data.yaml` format configuration
 
-- GUI interaction logic details in src/GUI_software.py
+- GUI interaction logic details in `src/GUI_software.py`
