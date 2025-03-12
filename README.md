@@ -34,8 +34,34 @@ pip install pyqt5 labelme scikit-learn opencv-python
 - Annotate components using Labelme, save annotations to `data/annotations`
 
 ### **Model Training:**
-
-### **Object detection (YOLOv5)**
 ```bash
+# Object detection (YOLOv5)
 python train.py --data data.yaml --cfg yolov5s.yaml --weights yolov5s.pt --epochs 100
+
+# Fault classification (SVM)
+python train_svm.py --dataset data/processed --class bearing
 ```
+### Launch GUI
+```bash
+python src/GUI_software.py
+```
+Project Structure
+
+├── data/                 # Datasets
+│   ├── raw_images/       # Raw TFDS images
+│   ├── processed/        # Preprocessed images
+│   └── annotations/      # Labelme annotations
+├── models/               # Pretrained models
+│   ├── yolov5s.pt
+│   └── svm_classifier.pkl
+├── src/                  # Source code
+│   ├── preprocessing.py  # Image enhancement
+│   ├── detection.py      # Object detection
+│   └── GUI_software.py   # System GUI
+└── docs/                 # Documentation
+
+Performance
+Component	Precision (P)	Recall (R)	mAP@0.5
+Bearing	0.997	1.000	0.995
+Retaining Key	0.999	1.000	0.995
+Locking Plate	0.999	1.000	0.995
