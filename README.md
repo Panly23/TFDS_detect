@@ -60,7 +60,9 @@ python src/GUI_software.py
 └── docs/                 # Documentation
 ```
 ## Performance
-Component	Precision (P)	Recall (R)	mAP@0.5
-Bearing	0.997	1.000	0.995
-Retaining Key	0.999	1.000	0.995
-Locking Plate	0.999	1.000	0.995
+| Component      | Precision (P) | Recall (R) | mAP@0.5 |
+|--------------|--------------|------------|--------|
+| Bearing       | 0.997        | 1.000      | 0.995  |
+| Retaining Key | 0.999        | 1.000      | 0.995  |
+| Locking Plate | 0.999        | 1.000      | 0.995  |
+
