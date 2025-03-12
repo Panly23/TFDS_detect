@@ -30,7 +30,7 @@ pip install torch==1.13.1 torchvision
 pip install pyqt5 labelme scikit-learn opencv-python
 ```
 ## Usage
-###1. **Clone repositoryn:**
+**1. Clone repository:**
 - Store TFDS images in `data/raw_images`
 - Annotate components using Labelme, save annotations to `data/annotations`
 
